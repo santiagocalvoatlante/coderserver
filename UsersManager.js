@@ -1,28 +1,28 @@
-class UserManager {
+class UsersManager {
     static #users = []
     create(data) {
         const user = {
-            id: UserManager.#users.length === 0 ? 1 : UserManager.#users[UserManager.#users.length - 1].id + 1,
-            foto: data.foto,
+            id: UsersManager.#users.length === 0 ? 1 : UsersManager.#users[UserManager.#users.length - 1].id + 1,
+            photo: data.photo,
             email: data.email,
             password: data.password,
             role: 0
         }
-        UserManager.#users.push(user);
+        UsersManager.#users.push(user);
         console.log("usuariocreado");
     }
     read(){
-        return UserManager.#users
+        return UsersManager.#users
     }
 }
-const gestorUsuarios = new UserManager()
+const gestorUsuarios = new UsersManager()
 gestorUsuarios.create({
-    foto: 'javapic.jpg',
+    photo: 'javapic.jpg',
     email: "valenreale123@gmail.com",
     password: "hola123",
 })
 gestorUsuarios.create({
-    foto: 'javaimg.jpg',
+    photo : 'javaimg.jpg',
     email: "santiagocalvoatlante@gmail.com",
     password: "hola1234",
 })

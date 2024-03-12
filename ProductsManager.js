@@ -1,27 +1,29 @@
 class ProductsManager {
-    static #users = []
+    static #products = []
     create(data) {
         const user = {
-            id: ProductsManager.#users.length === 0 ? 1 : ProductsManager.#users[UserManager.#users.length - 1].id + 1,
-            foto: data.foto,
-            email: data.email,
-            password: data.password,
-            role: 0
+            id: ProductsManager.#products.length === 0 ? 1 : ProductsManager.#products[ProductsManager.#products.length - 1].id + 1,
+            title: data.title,
+            photo: data.photo,
+            category: data.category,
+            price: data.price,
+            stock: data.stock,
+            role: 0,
         }
-        ProductsManager.#users.push(user);
-        console.log("usuariocreado");
+        ProductsManager.#products.push(user);
+        console.log("producto creado");
     }
     read(){
-        return ProductsManager.#users
+        return ProductsManager.#products
     }
 }
-const gestorUsuarios = new UserManager()
-gestorUsuarios.create({
+const gestorProductos = new ProductsManager()
+gestorProductos.create({
     foto: 'javapic.jpg',
     email: "valenreale123@gmail.com",
     password: "hola123",
 })
-gestorUsuarios.create({
+gestorProductos.create({
     foto: 'javaimg.jpg',
     email: "santiagocalvoatlante@gmail.com",
     password: "hola1234",
